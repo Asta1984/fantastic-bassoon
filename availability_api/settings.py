@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -102,10 +104,10 @@ WSGI_APPLICATION = 'availability_api.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default='postgresql://salil:H35Oq4PeGDOAR6Y0lSffxxnOIcnujWer@dpg-cve3bhin91rc73bdqb60-a.singapore-postgres.render.com/renit',  # Use Render's database URL
+        conn_max_age=600
+    )
 }
 
 REST_FRAMEWORK = {
