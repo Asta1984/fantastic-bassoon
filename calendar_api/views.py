@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics, status
 from rest_framework.response import Response
-from rest_framework import serializers  # Add missing import
+from rest_framework import serializers  
 from .models import ProductUnavailability
 from .serializers import UnavailabilitySerializer, BulkUnavailabilitySerializer
 from django.utils import timezone

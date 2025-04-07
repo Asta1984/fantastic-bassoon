@@ -10,6 +10,6 @@ class UnavailabilitySerializer(serializers.ModelSerializer):
 class BulkUnavailabilitySerializer(serializers.Serializer):
     dates = serializers.ListField(
         child=serializers.DateField(),
-        min_length=1
+        min_length=0
     )
     reason = serializers.CharField(required=False, allow_blank=True)
